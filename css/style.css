@@ -32,7 +32,14 @@ header {
   right: 20px;
   font-size: 2em;
   color: #85CDFD;
-  z-index: 10
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+}
+
+.skip.show {
+  opacity: 1;
 }
 
 #music-player {
@@ -45,7 +52,10 @@ header {
   font-size: 2em;
   color: #85CDFD;
   z-index: 10
+}
 
+#music-player a {
+  color: #85CDFD;
 }
 
 .skip a {
@@ -397,8 +407,6 @@ img {
   min-width: 400px;
   min-height: 125px;
   padding: 10px;
-  border-radius: 5px;
-  border: 5px dashed #85CDFD;
   justify-content: center;
   align-self: center;
   align-items: center;
@@ -406,6 +414,11 @@ img {
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
+}
+
+img:nth-child(2n) {
+  border-radius: 5px;
+  border: 5px dashed #9a1ef2;
 }
 
 img:hover {
@@ -468,6 +481,13 @@ img:hover {
 
 }
 
+.main-l div {
+  display: flex;
+  flex-direction: column;
+  border: dashed #128ded;
+  margin: 10px;
+}
+
 footer {
   background-image: url('../images/Frame1.png');
   background-size: cover;
@@ -480,6 +500,15 @@ footer a {
 }
 
 @media screen and (max-width: 480px) {
+
+  div {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50pt;
+    /* color: black;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: #85CDFD; */
+  }
   .screen-nav {
     display: none;
   }
@@ -638,7 +667,7 @@ footer a {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin: auto;
-
+    overflow: auto;
     width: 68vh;
     height: 35vh;
 
@@ -654,8 +683,9 @@ footer a {
   }
 
   .left .title {
+    overflow: visible;
     width: max-content;
-    font-size: 2.875rem;
+    font-size: 2.7rem;
     white-space: nowrap;
     font-family: 'Staatliches', cursive;
     border: none;
@@ -665,6 +695,10 @@ footer a {
   .left .title a {
     color: black;
   }
+
+.left div {
+  overflow: auto;
+ }
 
 
   .category-ex p {
