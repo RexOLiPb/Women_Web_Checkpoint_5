@@ -35,7 +35,23 @@ header {
   z-index: 10
 }
 
+#music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  font-size: 2em;
+  color: #85CDFD;
+  z-index: 10
+
+}
+
 .skip a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #85CDFD;
   text-decoration: none;
   font-family: cursive;
@@ -372,6 +388,7 @@ main {
   justify-content: center;
   align-self: center;
   align-items: center;
+  overflow: hidden;
 }
 
 img {
@@ -385,11 +402,17 @@ img {
   justify-content: center;
   align-self: center;
   align-items: center;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
 
 img:hover {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   border-color: #128ded;
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 /* .container-p{
@@ -407,6 +430,43 @@ img:hover {
   background-color: black;
 } */
 
+
+.h-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 150vh 150vh 150vh 150vh 150vh 150vh;
+  grid-gap: 2vh;
+  align-items: start;
+  grid-row-gap: 5vh;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.main-h {
+  display: grid;
+  background-color: #ccc;
+  padding: 5vh;
+  margin: 5vh;
+}
+
+.h-i {
+  overflow: hidden;
+}
+
+.h-t {
+  font-size: 30pt;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 8vh;
+  text-align: center;
+}
+
+.h-p1 p {
+  overflow: auto;
+  font-size: 10pt;
+
+}
 
 footer {
   background-image: url('../images/Frame1.png');
@@ -570,7 +630,7 @@ footer a {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 8vh;
-    
+
   }
 
   .category-container {
@@ -586,7 +646,7 @@ footer a {
     box-shadow: 1px 1px 25px 3px rgba(0, 0, 0, .3);
   }
 
-  .left{
+  .left {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
